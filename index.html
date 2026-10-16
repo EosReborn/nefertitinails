@@ -36,15 +36,15 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:10;background:rgba(245,223,207,.92);backdrop-filter:blur(6px);border-bottom:1px solid rgba(184,134,59,.35)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
 .brand{display:block;line-height:0}
-.brand img{height:46px;width:auto}
+.brand img{height:54px;width:auto}
 nav{display:flex;gap:22px}
 nav a{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--ink-soft);transition:color .2s}
 nav a:hover{color:var(--gold)}
 
 /* Hero */
-.hero{padding:40px 0 20px;text-align:center}
-.hero img{width:100%;max-width:640px;height:auto}
-.hero p{margin-top:26px;font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;color:var(--ink-soft)}
+.hero{padding:90px 0 40px;text-align:center}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2.6rem;line-height:1.25;color:var(--ink)}
+.hero .sub{margin-top:18px;font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
 .btn{display:inline-block;margin-top:22px;padding:12px 34px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;transition:.25s}
 .btn:hover{background:var(--gold);color:#fff}
 
@@ -80,7 +80,9 @@ footer{padding:34px 0;text-align:center;border-top:1px solid rgba(184,134,59,.35
 @media(max-width:640px){
   nav{gap:12px}
   nav a{font-size:.62rem;letter-spacing:.12em}
-  .brand img{height:38px}
+  .brand img{height:42px}
+  .hero{padding:60px 0 20px}
+  .hero h1{font-size:1.9rem}
   .gallery{grid-template-columns:repeat(2,1fr)}
   .contact{grid-template-columns:1fr}
   h2{font-size:2.5rem}
@@ -91,7 +93,7 @@ footer{padding:34px 0;text-align:center;border-top:1px solid rgba(184,134,59,.35
 
 <header>
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Nefertiti Nails"><img src="img/logo.png" alt="Nefertiti Nails" height="46"></a>
+    <a class="brand" href="#top" aria-label="Nefertiti Nails"><img src="img/logo.png" alt="Nefertiti Nails" height="54"></a>
     <nav>
       <a href="#rolunk">Rólunk</a>
       <a href="#arlista">Árlista</a>
@@ -103,8 +105,8 @@ footer{padding:34px 0;text-align:center;border-top:1px solid rgba(184,134,59,.35
 
 <main id="top">
   <div class="wrap hero">
-    <img src="img/logo.png" alt="Nefertiti Nails – Pedikűr · Manikűr · Köröm" width="1193" height="755">
-    <p>Királynői kényeztetés a kezeidnek és a lábaidnak</p>
+    <h1>Királynői kényeztetés<br>a kezeidnek és a lábaidnak</h1>
+    <p class="sub">Pedikűr · Manikűr · Köröm</p>
     <a class="btn" href="#kapcsolat">Időpontfoglalás</a>
   </div>
 
