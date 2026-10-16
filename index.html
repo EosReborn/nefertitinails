@@ -27,9 +27,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{
   --bg:#f5dfcf;        /* bézs / barack márvány */
@@ -102,6 +100,8 @@ h2{font-family:'Great Vibes',cursive;font-weight:400;font-size:3rem;color:var(--
 .card a{text-decoration:none}
 .card a:hover{color:var(--gold)}
 
+.legal{display:inline-block;margin-top:8px;text-decoration:underline;text-underline-offset:3px}
+.legal:hover{color:var(--gold)}
 footer{padding:34px 0;text-align:center;border-top:1px solid rgba(184,134,59,.35);font-size:.75rem;letter-spacing:.15em;color:var(--ink-soft)}
 
 @media(max-width:640px){
@@ -193,7 +193,7 @@ footer{padding:34px 0;text-align:center;border-top:1px solid rgba(184,134,59,.35
   </section>
 </main>
 
-<footer>© <span id="y">2026</span> Nefertiti Nails · Pedikűr · Manikűr · Köröm</footer>
+<footer>© <span id="y">2026</span> Nefertiti Nails · Pedikűr · Manikűr · Köröm<br><a class="legal" href="adatvedelem.html">Adatvédelem &amp; Impresszum</a></footer>
 <script>
 const btn=document.getElementById('menuBtn'),menu=document.getElementById('menu');
 function setMenu(o){menu.classList.toggle('open',o);btn.setAttribute('aria-expanded',o)}
