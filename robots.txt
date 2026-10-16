@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eosreborn.github.io/nefertitinails/sitemap.xml
