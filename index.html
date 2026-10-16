@@ -37,8 +37,14 @@ header{position:sticky;top:0;z-index:10;background:rgba(245,223,207,.92);backdro
 header .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
 .brand{display:block;line-height:0}
 .brand img{height:54px;width:auto}
-nav{display:flex;gap:22px}
-nav a{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--ink-soft);transition:color .2s}
+.menu-btn{width:44px;height:44px;background:none;border:1px solid rgba(184,134,59,.5);border-radius:4px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--gold);transition:transform .25s,opacity .2s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+nav{position:absolute;top:100%;left:0;right:0;background:rgba(250,234,221,.98);border-bottom:1px solid rgba(184,134,59,.35);box-shadow:0 12px 24px rgba(122,84,32,.15);display:none;flex-direction:column;text-align:center;padding:10px 0}
+nav.open{display:flex}
+nav a{padding:16px 20px;font-size:.8rem;letter-spacing:.25em;text-transform:uppercase;text-decoration:none;color:var(--ink-soft);transition:color .2s}
 nav a:hover{color:var(--gold)}
 
 /* Hero */
@@ -78,8 +84,6 @@ h2{font-family:'Great Vibes',cursive;font-weight:400;font-size:3rem;color:var(--
 footer{padding:34px 0;text-align:center;border-top:1px solid rgba(184,134,59,.35);font-size:.75rem;letter-spacing:.15em;color:var(--ink-soft)}
 
 @media(max-width:640px){
-  nav{gap:12px}
-  nav a{font-size:.62rem;letter-spacing:.12em}
   .brand img{height:42px}
   .hero{padding:60px 0 20px}
   .hero h1{font-size:1.9rem}
@@ -94,7 +98,8 @@ footer{padding:34px 0;text-align:center;border-top:1px solid rgba(184,134,59,.35
 <header>
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Nefertiti Nails"><img src="img/logo.png" alt="Nefertiti Nails" height="54"></a>
-    <nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menü" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <nav id="menu">
       <a href="#rolunk">Rólunk</a>
       <a href="#arlista">Árlista</a>
       <a href="#kepek">Képek</a>
@@ -168,6 +173,13 @@ footer{padding:34px 0;text-align:center;border-top:1px solid rgba(184,134,59,.35
 </main>
 
 <footer>© <span id="y">2026</span> Nefertiti Nails · Pedikűr · Manikűr · Köröm</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script>
+const btn=document.getElementById('menuBtn'),menu=document.getElementById('menu');
+function setMenu(o){menu.classList.toggle('open',o);btn.setAttribute('aria-expanded',o)}
+btn.addEventListener('click',()=>setMenu(!menu.classList.contains('open')));
+menu.addEventListener('click',e=>{if(e.target.tagName==='A')setMenu(false)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+document.addEventListener('click',e=>{if(!menu.contains(e.target)&&!btn.contains(e.target))setMenu(false)});
+document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
